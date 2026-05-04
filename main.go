@@ -9,9 +9,29 @@ type Data struct {
 	angka2 int
 }
 
+// struct method
+
+type Customer struct {
+	Name string
+	Age  int
+}
+
+func (customer Customer) saysay() {
+	fmt.Println("namaku ", customer.Name)
+}
+
 func operasi(data *Data) {
 	hasil := data.angka1 + data.angka2
 	fmt.Println(hasil)
+}
+
+// pointer di func
+type Address struct {
+	Country string
+}
+
+func ChangeAddtoIdn(address *Address) {
+	address.Country = "indonesia"
 }
 
 // func parameter
@@ -50,6 +70,8 @@ func runApp() {
 }
 
 func main() {
+
+	// struct literals
 	datas := Data{
 		angka1: 1,
 		angka2: 2,
@@ -104,4 +126,15 @@ func main() {
 
 	// defer
 	runApp()
+
+	// struct methode
+	orang := Customer{Name: "anjayani"}
+	orang.saysay()
+
+	// pointer di func
+	addre := Address{
+		Country: "malay",
+	}
+	ChangeAddtoIdn(&addre)
+	fmt.Println(addre)
 }
