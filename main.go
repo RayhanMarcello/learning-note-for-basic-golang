@@ -14,6 +14,18 @@ func operasi(data *Data) {
 	fmt.Println(hasil)
 }
 
+// func parameter
+
+func sayHai(nama string, umur int) {
+	fmt.Println(nama, umur)
+}
+
+// func return value
+
+func getHai(nama string) string {
+	return "hai " + nama
+}
+
 func main() {
 	datas := Data{
 		angka1: 1,
@@ -47,4 +59,11 @@ func main() {
 		fmt.Println("perulangan ke", counter)
 		counter++
 	}
+
+	// func parameter
+	sayHai("kontolodon", 2121)
+
+	// func return value
+	res := getHai("rayhan")
+	fmt.Println(res)
 }
