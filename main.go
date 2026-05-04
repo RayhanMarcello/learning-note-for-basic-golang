@@ -34,6 +34,15 @@ func ChangeAddtoIdn(address *Address) {
 	address.Country = "indonesia"
 }
 
+// pointer di method
+type Man struct {
+	Name string
+}
+
+func (man *Man) Married() {
+	man.Name = "kontolodon " + man.Name
+}
+
 // func parameter
 
 func sayHai(nama string, umur int) {
@@ -137,4 +146,11 @@ func main() {
 	}
 	ChangeAddtoIdn(&addre)
 	fmt.Println(addre)
+
+	// pointer di method
+	cello := Man{
+		Name: "celloku",
+	}
+	cello.Married()
+	fmt.Println(cello.Name)
 }
