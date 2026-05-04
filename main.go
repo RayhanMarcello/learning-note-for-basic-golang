@@ -26,6 +26,12 @@ func getHai(nama string) string {
 	return "hai " + nama
 }
 
+// func multiple values
+
+func getFullName() (string, string) {
+	return "cello", "keren"
+}
+
 func main() {
 	datas := Data{
 		angka1: 1,
@@ -66,4 +72,12 @@ func main() {
 	// func return value
 	res := getHai("rayhan")
 	fmt.Println(res)
+
+	// func multiple return value
+	firstname, lastname := getFullName()
+	fmt.Println(firstname, lastname)
+
+	// jika buuth cuman 1 value
+	firstnames, _ := getFullName()
+	fmt.Println(firstnames)
 }
