@@ -32,6 +32,23 @@ func getFullName() (string, string) {
 	return "cello", "keren"
 }
 
+// func named return values
+
+func getCompleteName() (pertama, kedua string) {
+	pertama = "kontolodon"
+	kedua = "hai"
+	return pertama, kedua
+}
+
+// defer
+func logging() {
+	fmt.Println("loging")
+}
+func runApp() {
+	defer logging()
+	fmt.Println("app running")
+}
+
 func main() {
 	datas := Data{
 		angka1: 1,
@@ -80,4 +97,11 @@ func main() {
 	// jika buuth cuman 1 value
 	firstnames, _ := getFullName()
 	fmt.Println(firstnames)
+
+	// named return values
+	pertama, kedua := getCompleteName()
+	fmt.Println(pertama, kedua)
+
+	// defer
+	runApp()
 }
